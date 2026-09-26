@@ -1,0 +1,35 @@
+{
+  "name": "finops-agent",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-agentcore": "^3.1141.0",
+    "@aws-sdk/credential-provider-node": "^3.972.84",
+    "@aws-sdk/signature-v4": "^3.374.0",
+    "@aws-crypto/sha256-js": "^5.2.0",
+    "@smithy/protocol-http": "^5.6.2",
+    "next": "16.3.3",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.3",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "allowScripts": {
+    "unrs-resolver@1.12.2": true
+  }
+}

@@ -1,0 +1,21 @@
+version: 1
+applications:
+  - appRoot: src/finops_agent/frontend
+    frontend:
+      phases:
+        preBuild:
+          commands:
+            - npm ci
+            - echo "API_BASE_URL=$API_BASE_URL" >> .env.production
+            - echo "NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL" >> .env.production
+            - echo "AGENT_RUNTIME_ARN=$AGENT_RUNTIME_ARN" >> .env.production
+        build:
+          commands:
+            - npm run build
+      artifacts:
+        baseDirectory: .next
+        files:
+          - '**/*'
+      cache:
+        paths:
+          - node_modules/**/*

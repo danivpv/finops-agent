@@ -1,0 +1,8 @@
+{
+  "httpMethod": "POST",
+  "path": "/ask",
+  "headers": {"Content-Type": "application/json"},
+  "queryStringParameters": null,
+  "body": "{\"question\": \"2 on demand most expensive services in september 2025\", \"context\": {\"group_by\": \"service\", \"period\": \"2025-09\"}}",
+  "isBase64Encoded": false
+}

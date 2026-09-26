@@ -1,0 +1,32 @@
+[
+  {
+    "name": "run_finops_query",
+    "description": "Run one grouped aggregation over the FinOps cost dice for a billing period. Returns aggregated rows and the display SQL. Never returns raw usage lines.",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "group_by": {
+          "type": "string",
+          "description": "Dimension: service, account, region, usage_kind, instance_type, or commitment_scope."
+        },
+        "metric": {
+          "type": "string",
+          "description": "Metric: on_demand_cost, amortized_cost, or usage_amount."
+        },
+        "period": {
+          "type": "string",
+          "description": "Billing period to aggregate, YYYY-MM."
+        },
+        "comparison_period": {
+          "type": "string",
+          "description": "Optional earlier billing period. When set, each row includes earlier, later, and change."
+        },
+        "top_n": {
+          "type": "integer",
+          "description": "Maximum rows to return, from 1 to 12."
+        }
+      },
+      "required": ["group_by", "metric", "period"]
+    }
+  }
+]
