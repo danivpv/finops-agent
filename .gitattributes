@@ -1,0 +1,61 @@
+# Set default behavior to normalize line endings to LF on commit
+* text=auto eol=lf
+
+# Python, shell scripts, and build files must preserve LF line endings in Linux/Docker/AWS
+*.py text eol=lf
+*.sh text eol=lf
+Makefile text eol=lf
+Dockerfile text eol=lf
+
+# Treat lock files as binary to suppress line counts in local `git diff --stat`
+package-lock.json -diff
+yarn.lock -diff
+pnpm-lock.yaml -diff
+bun.lock -diff
+bun.lockb -diff
+uv.lock -diff
+poetry.lock -diff
+Pipfile.lock -diff
+*.lock -diff
+
+# Mark lock files as generated to auto-collapse them in GitHub/GitLab PRs
+package-lock.json linguist-generated=true
+yarn.lock linguist-generated=true
+pnpm-lock.yaml linguist-generated=true
+bun.lock linguist-generated=true
+bun.lockb linguist-generated=true
+uv.lock linguist-generated=true
+poetry.lock linguist-generated=true
+Pipfile.lock linguist-generated=true
+*.lock linguist-generated=true
+
+# Exclude lock files from repository language statistics (e.g., GitHub language bar)
+package-lock.json linguist-vendored=true
+yarn.lock linguist-vendored=true
+pnpm-lock.yaml linguist-vendored=true
+bun.lock linguist-vendored=true
+bun.lockb linguist-vendored=true
+uv.lock linguist-vendored=true
+poetry.lock linguist-vendored=true
+Pipfile.lock linguist-vendored=true
+*.lock linguist-vendored=true
+
+# CDK / CloudFormation synth outputs and snapshots
+*.template.json linguist-generated=true
+cdk.context.json -diff
+
+# Media assets, models, and binaries
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.parquet binary
+
+# Text assets & configurations
+*.svg text
+*.json text
+*.yaml text
+*.yml text

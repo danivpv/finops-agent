@@ -1,0 +1,10 @@
+{
+  "resource": "/{proxy+}",
+  "httpMethod": "POST",
+  "path": "/slice",
+  "headers": {"Content-Type": "application/json"},
+  "queryStringParameters": null,
+  "requestContext": {"httpMethod": "POST", "path": "/slice"},
+  "body": "{\"group_by\": \"service\", \"metric\": \"on_demand_cost\", \"top_n\": 5}",
+  "isBase64Encoded": false
+}

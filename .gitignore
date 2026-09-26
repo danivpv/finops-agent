@@ -1,0 +1,33 @@
+# secrets — never commit
+.env
+
+# python
+.venv/
+__pycache__/
+*.pyc
+
+# node
+npm-debug.log*
+
+# misc
+.DS_Store
+
+# IDE
+.kilo
+
+# data — raw parquets (data/) and baked outputs are large binaries.
+# Regenerate baked data with `make precompute`.
+data/
+!src/finops_agent/data
+src/finops_agent/data/precomputed/
+.aws-sam/
+
+# cache
+.ruff_cache
+.pytest_cache
+
+# cdk
+cdk.out/
+
+# project files
+_*.md

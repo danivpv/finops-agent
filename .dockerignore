@@ -1,0 +1,25 @@
+.git/
+.gitignore
+.venv/
+.cache/
+.aws-sam/
+.kilo/
+cdk.out/
+.pytest_cache/
+.ruff_cache/
+# raw source data: only needed by scripts/precompute_data.py, never in images
+data/
+# frontend builds via Amplify, not docker
+src/finops_agent/frontend/
+# baked data is copied from src/finops_agent/data/precomputed,
+# but raw sources and caches never belong in an image context
+# python artifacts
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+# secrets and local config
+.env
+**/.env
+**/.env.*
+# docs
+docs/

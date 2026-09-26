@@ -1,0 +1,44 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  Local SAM template for the Data Lambda only. The authoritative IaC is app.py.
+  AgentCore Runtime is not emulated by SAM (and neither is a Gateway). Run the
+  agent with `make dev-agent`, which starts the same Python module the container runs.
+
+Globals:
+  Function:
+    Timeout: 30
+    MemorySize: 512
+    Environment:
+      Variables:
+        CC_DATA_DIR: /var/task/finops_agent/data/precomputed
+
+Resources:
+  DataFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      DockerContext: .
+      DockerTag: data-local
+      Dockerfile: src/finops_agent/data/runtime/Dockerfile
+    Properties:
+      PackageType: Image
+      ImageConfig:
+        Command: ["finops_agent.data.runtime.handler.handler"]
+      MemorySize: 512
+      Timeout: 30
+      Events:
+        AnyProxy:
+          Type: Api
+          Properties:
+            Path: /{proxy+}
+            Method: ANY
+        Root:
+          Type: Api
+          Properties:
+            Path: /
+            Method: ANY
+
+Outputs:
+  LocalApiUrl:
+    Description: SAM local API Gateway endpoint (sam local start-api)
+    Value: "http://127.0.0.1:3001"
