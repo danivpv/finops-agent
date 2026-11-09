@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL || "https://main.d1e2bsg3elvnb4.amplifyapp.com"
+    process.env.NEXT_PUBLIC_APP_URL || "https://main.dz5ronnzg5wwo.amplifyapp.com"
   ),
   title: "FinOps Agent: Autonomous Cloud Economics on AWS",
   description:
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "FinOps Agent: Autonomous Cloud Economics on AWS",
     description:
       "Autonomous cloud economics agent built with AWS CDK, Bedrock AgentCore Gateway, and Next.js to optimize AWS commitment ROI.",
-    url: "https://main.d1e2bsg3elvnb4.amplifyapp.com",
+    url: "https://main.dz5ronnzg5wwo.amplifyapp.com",
     siteName: "FinOps Agent",
     locale: "en_US",
     type: "website",
